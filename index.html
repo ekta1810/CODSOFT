@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Daily Inspire</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="manifest" href="manifest.json" />
+<meta name="theme-color" content="#00f2fe" />
+<link rel="apple-touch-icon" href="icon.png" />
+
+</head>
+<body>
+  <div class="app">
+    <h1>Inspiration of the Day ✨</h1>
+    <div class="quote-box">
+      <p id="quote">Loading quote...</p>
+      <span id="author">–</span>
+      
+    </div>
+    <div class="buttons">
+      <button onclick="saveFavorite()">❤️ Save</button>
+      <button onclick="getNewQuote()">🔄 New Quote</button>
+      <button onclick="shareQuote()">📤 Share</button>
+    </div>
+    <h2>Your Favorites</h2>
+    <ul id="favorites"></ul>
+  </div>
+  <script src="script.js"></script>
+  <script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("service-worker.js")
+      .then(() => console.log("✅ Service Worker Registered"));
+  }
+</script>
+
+</body>
+</html>
+
+
+
+
+
