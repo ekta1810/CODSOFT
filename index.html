@@ -2,94 +2,55 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Quiz App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  
+  
+  <title>Inspire - Daily Quote App</title>
+  <meta name="description" content="Inspire App - Get a daily motivational quote. Made by Ekta Singh during CODSOFT internship." />
+  <meta property="og:title" content="Inspire - Quote of the Day" />
+  <meta property="og:description" content="Get a daily motivational quote. Save, share, and get inspired." />
+  <meta property="og:image" content="icon.png" />
+  <meta property="og:url" content=" https://ekta1810.github.io/-CODSOFT/" />
+   <meta name="author" content="Ekta Singh" />
+<meta name="publish_date" content="2025-07-14T00:00:00Z" />
+  <meta property="og:type" content="website" />
+
+
   <link rel="stylesheet" href="style.css"/>
-  <link rel="manifest" href="manifest.json">
-  <link rel="icon" type="image/png" sizes="192x192" href="ico-123.png">
-<link rel="icon" type="image/png" sizes="512x512" href="ico-123.png">
-<meta name="theme-color" content="#2196f3">
+  <link rel="manifest" href="manifest.json" />
+<meta name="theme-color" content="#00f2fe" />
+<link rel="apple-touch-icon" href="icon.png" />
 
 </head>
-
-  <body>
-
-
-
-
-
-    
-    
-
-  <div class="container">
-    <div id="home">
-      <h1>Welcome to the Quiz App</h1>
-      <div class="profile-setup">
-  <h2>🎯 Create Your Profile</h2>
-  
-  <label for="playerName">Your Name</label>
-  <input type="text" id="playerName" placeholder="Enter your name" />
-
-  <h3>Choose Your Avatar</h3>
-  <div class="avatar-grid">
-    <img src="d1098e26fdef1833c1858e1a226bc6d0.jpg" alt="Avatar 1" class="avatar-option">
-    <img src="e8cde32a76e7154c800df99525eaa66a.jpg" alt="Avatar 2" class="avatar-option">
-    <img src="gaming-profile-pictures-xpcd6q5uud2i45v8.jpg" alt="Avatar 3" class="avatar-option">
-    <img src="images.jpg" alt="Avatar 4" class="avatar-option">
-  </div>
-
-  <div class="profile-preview">
-    <h4>Preview:</h4>
-    <img id="avatarPreview" src="avatars/avatar1.png" alt="Selected Avatar">
-    <p id="namePreview">Player Name</p>
-  </div>
-
- <button id="start-quiz-btn">Start Quiz</button>
-</div>
-
-     <div id="category-screen" class="hidden">
-  <h2>Select a Category</h2>
-  <div id="category-list"></div>
-</div>
-
-      <ul id="categoryList"></ul>
-      <button onclick="startRandomQuiz()">Start Random Quiz</button>
+<body>
+  <div class="app">
+    <h1>Inspiration of the Day ✨</h1>
+    <div class="quote-box">
+      <p id="quote">Loading quote...</p>
+      <span id="author">–</span>
+      
     </div>
-
-    <!-- Quiz Screen -->
-<div id="quiz-screen" style="display:none;">
-  <div id="quiz-header">
-    <span id="player-name"></span>
-    <img id="player-avatar" alt="Avatar" width="40">
-  </div>
-  <div id="quiz-container"></div>
-</div>
-
-    <div id="quiz" class="hidden">
-      <h2 id="categoryTitle"></h2>
-      <p id="questionText"></p>
-      <div id="options"></div>
-      <p id="feedback"></p>
-      <button onclick="nextQuestion()">Next</button>
+    <div class="buttons">
+      <button onclick="saveFavorite()">❤️ Save</button>
+      <button onclick="getNewQuote()">🔄 New Quote</button>
+      <button onclick="shareQuote()">📤 Share</button>
     </div>
-    <div id="timer" style="font-weight: bold; margin: 10px;">Time left: 15s</div>
-
-
-    <div id="result" class="hidden">
-      <h2>Quiz Results</h2>
-      <p id="score"></p>
-      <ul id="summary"></ul>
-      <button onclick="goHome()">Back to Home</button>
-    </div>
+    <h2>Your Favorites</h2>
+    <ul id="favorites"></ul>
   </div>
-  
-  <script src="app.js"></script>
+  <script src="script.js"></script>
   <script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('./service-worker.js')
-      .then(() => console.log('Service Worker Registered'));
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("service-worker.js")
+      .then(() => console.log("✅ Service Worker Registered"));
   }
 </script>
 
 </body>
 </html>
+
+
+
+
+
+
